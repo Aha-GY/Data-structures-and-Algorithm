@@ -1,0 +1,9 @@
+class Solution(object):
+    def targetIndices(self, nums, target):
+        res=[]
+        nums.sort()
+        index1=bisect.bisect_left(nums,target)
+        index2=bisect.bisect_right(nums,target)
+        return list(range(index1,index2))
+        
+        
