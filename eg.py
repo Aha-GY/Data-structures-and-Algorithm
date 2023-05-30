@@ -1,10 +1,15 @@
-class Person :
-    def __init__ (self,name,take):
-        self.name= name 
-        self.take = take
-    def man_self(self) :
-        print(self.name)
-type_person = Person("ahadu","fast")
-type_person_man_self()
+n=6
+m= 7
+a1= [1,6,9,13,18,18]
+b1= [2,3,8,13,15,21,25]
+
+
+merg=[]
+i=1
+while i< n+m:
+    if a1[i]<= b1[i]:
+        merg.append(a1[i])
+    merg.append(b1[i])
+print(merg)
 
         
