@@ -1,7 +1,7 @@
 class Solution:
     def reverse(self, x: int) -> int:
       
-       return int(ans)
+
         arr = list(str(x))
         
         if x < 0 :
