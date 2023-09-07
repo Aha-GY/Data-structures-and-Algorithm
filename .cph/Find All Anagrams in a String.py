@@ -13,5 +13,6 @@ class Solution:
             window_counts[s[i - len(p) + 1]] -= 1
             if window_counts[s[i - len(p) + 1]] == 0:
                 del window_counts[s[i - len(p) + 1]]
-                
         return result
+
+
