@@ -1,0 +1,19 @@
+from collections import deque, Counter
+
+class DataStream:
+
+    def __init__(self, value: int, k: int):
+        self.q = deque()
+        self.v = value
+        self.k = k
+        self.m = Counter()
+
+    def consec(self, num: int) -> bool:
+        self.q.append(num)
+        self.m[num] += 1
+        while len(self.q) > self.k:
+            x = self.q.popleft()
+            self.m[x] -= 1
+            if self.m[x] == 0:
+                del self.m[x]
+        return self.m[self.v] == self.k
