@@ -1,0 +1,13 @@
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        mapping = {'+': lambda x, y: x + y, '-': lambda x, y: y - x, '*': lambda x, y: x * y, '/': lambda x, y: int(y / x)}
+        num = []
+        values = 0
+
+        for i in range(len(tokens)):
+            if tokens[i] not in mapping :
+                num.append(int(tokens[i]))
+            else :
+                values = mapping[tokens[i]](num.pop(), num.pop())
+                num.append(values)
+        return num.pop()
