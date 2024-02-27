@@ -1,16 +1,15 @@
 class Solution:
     def decodeString(self, s: str) -> str:
+        
         open_br = []
         bracket = {}
 
-        # Find matching brackets and store their indices
         for i in range(len(s)):
             if s[i] == "[":
                 open_br.append(i)
             elif s[i] == "]":
                 bracket[open_br.pop()] = i
 
-        # Define decode function to recursively decode substrings
         def decode(start, end):
             ans = ""
             i = start
